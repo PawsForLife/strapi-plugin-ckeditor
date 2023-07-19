@@ -235,9 +235,6 @@ const REDUCED_MATERIAL_COLORS = [
 ];
 
 const base = {
-  fontFamily: {
-    supportAllValues: true,
-  },
   fontSize: {
     options: [10, 12, 14, "default", 18, 20, 22],
     supportAllValues: true,
@@ -259,17 +256,15 @@ const base = {
       { model: "heading2", view: "h2", title: "Heading 2", class: "ck-heading_heading2" },
       { model: "heading3", view: "h3", title: "Heading 3", class: "ck-heading_heading3" },
       { model: "heading4", view: "h4", title: "Heading 4", class: "ck-heading_heading4" },
-      { model: "heading5", view: "h5", title: "Heading 5", class: "ck-heading_heading5" },
-      { model: "heading6", view: "h6", title: "Heading 6", class: "ck-heading_heading6" },
     ],
   },
   htmlSupport: {
     allow: [
       {
-        name: /.*/,
+        name: /^(div|section|article)$/,
         attributes: true,
         classes: true,
-        styles: true,
+        styles: false,
       },
     ],
     disallow: [
@@ -501,7 +496,7 @@ export const toolbarEditorConfig = {
       label:' ', 
       tooltip: null,
       icon:'text',
-      items: [ 'bold', 'italic','fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor' ]
+      items: [ 'bold', 'italic','fontSize', 'fontColor', 'fontBackgroundColor' ]
     },
     {
       label:' ',
